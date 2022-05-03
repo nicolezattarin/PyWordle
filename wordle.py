@@ -7,8 +7,8 @@ GREEN = '#ADFF2F'
 LABEL_LIFE = 2000
 
 class Wordle():
-    def __init__(self):
-        self.voc = self.vocabulary()
+    def __init__(self, lang):
+        self.voc = self.vocabulary(lang)
         self.word = self.voc[np.random.randint(0, len(self.voc))] #as a string
         self.letters = set(self.word)
         self.guessedLetters = [(letter, GREY) for letter in self.word]
@@ -24,8 +24,14 @@ class Wordle():
         # DEBUG
         # print('The word is: ', self.word)
 
-    def vocabulary(self):
-        words = np.loadtxt('words.italian.txt', dtype='str')
+    def vocabulary(self, lang):
+        if lang == 'english':
+            file = 'words.english.txt'
+        elif lang == 'italian':
+            file = 'words.italian.txt'
+        else:
+            raise ValueError('Language not supported')
+        words = np.loadtxt(file, dtype='str')
         words5letters = np.array([word for word in words if len(word) == 5], dtype='str')
         return words5letters
 

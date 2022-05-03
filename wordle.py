@@ -92,8 +92,8 @@ class Wordle():
             # if the game is over
             if self.nguesses == 6 and colors != [GREEN]*5:
                 self.game_over = True
-                label = tk.Label(self.window, text='Game Over', font=self.font, bg=self.bgcolor, fg=self.fgcolor)
-                label.place(anchor=tk.CENTER, relx=0.3, rely=0.15, relwidth=1, relheight=0.06)
+                label = tk.Label(self.window, text='Game Over! Word is:\n{}'.format(self.word), font='Verdana 18 bold', bg=self.bgcolor, fg=self.fgcolor)
+                label.place(anchor=tk.CENTER, relx=0.4, rely=0.15, relwidth=1, relheight=0.06)
                 self.window.after(1000, lambda l: l.destroy(), self.window)
             elif colors == [GREEN]*5:
                 self.game_over = True

@@ -9,4 +9,4 @@ An example of interface follows:
 
 <p align="center"><img src="interface.png" width="270" /></p>
 
-*Note*: beta version now supports only italian vocabulary, new languages coming soon
+**Note**: beta version now supports only italian vocabulary, new languages coming soon

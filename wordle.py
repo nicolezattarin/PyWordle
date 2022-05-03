@@ -26,8 +26,8 @@ class Wordle():
 
     def vocabulary(self, lang):
         if lang == 'english':
-            file = 'words.english.txt'
-        elif lang == 'italian':
+            file = 'vocabulary/words.english.txt'
+        elif lang == 'vocabulary/italian':
             file = 'words.italian.txt'
         else:
             raise ValueError('Language not supported')

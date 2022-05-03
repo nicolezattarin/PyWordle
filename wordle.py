@@ -27,11 +27,13 @@ class Wordle():
     def vocabulary(self, lang):
         if lang == 'english':
             file = 'vocabulary/words.english.txt'
-        elif lang == 'vocabulary/italian':
-            file = 'words.italian.txt'
+        elif lang == 'italian':
+            file = 'vocabulary/words.italian.txt'
+        elif lang == 'turkish':
+            file = 'vocabulary/words.turkish.txt'
         else:
             raise ValueError('Language not supported')
-        words = np.loadtxt(file, dtype='str')
+        words = np.loadtxt(file, dtype='str', delimiter='\n')
         words5letters = np.array([word for word in words if len(word) == 5], dtype='str')
         return words5letters
 
